@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel ='stylesheet' href = 'styles.css'>
+</head>
+<body>
+    <div class = "header-container">
+        <div class = "logo"><a href = "main.html">Header Logo</a></div>
+        <ul>
+        <li><a href = "#experience">Experience</li>
+        <li><a href = "#Skills">Skills</a></li>
+        <li><a href = "#contact">Contact Me</li>
+        <li><a href = "https://www.linkedin.com/in/osman-elyas-77ab75249/">LinkedIn</a></li>
+        </ul>
+    </div>
+
+
+  <div id = "experience" class = "hero-container">
+    <div class = "left-side">
+    <h1>Osman Elyas</h1>
+    <p>University Of Aberdeen Student </p>
+    <button class="button">
+        Download CV
+      </button>    
+</div>
+    <img src = ".//images/WhatsApp Image 2022-09-07 at 8.58.32 PM.jpeg">
+  </div>
+
+  <div id ="Skills" class = "bottom">
+    <h2>My other work</h2>
+    <ul>
+        <div>
+        <li><img src ="images/l-intro-1642184804.jpg"></li>
+        <p>Luffy goat</p>
+    </div>
+    <div>
+        <li><img src ="images/53e15-16596004347246.avif"></li>
+        <p>Naruto</p>
+    </div>
+    <div>
+        <li><img src ="images/1f1d5-16534150569150-1920.webp"></li>
+        <p>Ichigo</p>
+    </div>
+    <div>
+        <li><img src ="images/Completed-Ultra-Instinct-Goku.avif"></li>
+        <p>Goku</p>
+    </div>
+    </ul>
+    </div>
+
+<div id ="contact" class = "contact_container">
+    <form onsubmit = "sendEmail(); reset(); return false;">
+        <h2>GET IN TOUCH</h2>
+        <input type = "text" id = "name" placeholder = "Your Name" required>
+        <input type = "text" id = "email" placeholder = "Email Address" required>
+        <input type = "text" id = "phone" placeholder = "Phone Number" required>
+        <textarea id ="message" rows ="4" placeholder = "How can I help you?"></textarea>
+        <button type ="Submit">Send</button>
+    </form>
+</div>
+<script src = "https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail(){
+        Email.send({
+            secureToken: "db80def7-c466-4973-8856-abe58637bbf4",
+
+            To : 'osmanelyas03@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "New Contact Form Enquiry",
+            Body : "Name: " + document.getElementById("name").value
+             + "<br> Email: " + document.getElementById("email").value
+             + "<br> Phone no: " + document.getElementById("phone").value
+             + "<br> Message: " + document.getElementById("message").value
+        }).then(
+        message => alert("Message Sent Succesfully")
+        );
+        }
+</script>
+
+    <h5>ad at the bottom</h5>
+
+
+</body>
+</html> 
